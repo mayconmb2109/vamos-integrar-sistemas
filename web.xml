@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0"
+         xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+
+    <!-- Define o Servlet Produto -->
+    <servlet>
+        <servlet-name>ServletProduto</servlet-name>
+        <servlet-class>cadastroee.servlets.ServletProduto</servlet-class>
+    </servlet>
+
+    <!-- Define o Servlet Front Controller -->
+    <servlet>
+        <servlet-name>ServletProdutoFC</servlet-name>
+        <servlet-class>cadastroee.servlets.ServletProdutoFC</servlet-class>
+    </servlet>
+
+    <!-- Mapeia o ServletProduto para uma URL específica -->
+    <servlet-mapping>
+        <servlet-name>ServletProduto</servlet-name>
+        <url-pattern>/ServletProduto</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeia o ServletProdutoFC para capturar todas as outras requisições -->
+    <servlet-mapping>
+        <servlet-name>ServletProdutoFC</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+ 
